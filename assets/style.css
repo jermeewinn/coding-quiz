@@ -31,10 +31,10 @@ footer {
 }
 /*Styling for the internals of each section*/
 h3 {
-    
+
 }
 
-/*Styling for button on landing page*/
+/*Styling for buttons on landing page*/
 .btn {
     border: 2px solid black;
     padding: 20px 50px;
@@ -48,3 +48,14 @@ h3 {
     font-size: 16px;
     border-radius: 8px;
 }
+
+.btn:hover, .btn-2:hover {
+    background-color: darkgray;
+    color: black
+}
+
+.btn:active, .btn-2:active {
+    transform: scale(0.98);
+}
+
+
