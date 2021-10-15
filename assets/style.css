@@ -3,6 +3,7 @@ header {
     background: #497980;
     text-align: center;
     padding: 50px 50px;
+    border: none;
 }
 
 body {
@@ -28,4 +29,22 @@ footer {
     position: fixed;
     bottom: 0;
 }
+/*Styling for the internals of each section*/
+h3 {
+    
+}
 
+/*Styling for button on landing page*/
+.btn {
+    border: 2px solid black;
+    padding: 20px 50px;
+    font-size: 40px;
+    border-radius: 15px;
+}
+
+.btn-2 {
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+}
