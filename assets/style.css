@@ -45,12 +45,19 @@ footer {
     border-radius: 8px;
 }
 
-.btn:hover, .btn-2:hover {
+.btn-3 {
+    border: 2px solid black;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.btn:hover, .btn-2:hover, .btn-3:hover {
     background-color: darkgray;
     color: black
 }
 
-.btn:active, .btn-2:active {
+.btn:active, .btn-2:active, .btn-3:active {
     transform: scale(0.98);
 }
 /*Hide stylings for after main button is clicked*/

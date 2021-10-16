@@ -79,6 +79,7 @@ var getIdBtn = document.getElementById("start-button")
 getIdBtn.addEventListener("click", function () {
     introContainerEl.style.display = "none";
     hiScoreContainerEl.style.display = "none";
+    questionContainerEl.style.display = "block"
     answer1El.addEventListener("click", submitAnswer);
     populateQuestion()
 })
@@ -99,26 +100,21 @@ function populateQuestion(){
     answer2El.textContent = currQuestion.answers[1];
     answer3El.textContent = currQuestion.answers[2];
     answer4El.textContent = currQuestion.answers[3];
-
 }
-function submitAnswer() {
-    console.log("submitting-answer")
-    console.log(this.dataset.answer)
-    if (this.dataset.answer == questions[currQuestionIndex].correct){
-        console.log("answer correct")
-    
-    } else {
-        console.log("answer incorrect")
-    }
-}
-
 //=====Step 2
 //User clicks on an answer, and we check if that is correct or not.
 //If it is correct, nothing happens.
 //If it is incorrect, there is a time penalty of 10sec.
-//Change right/wrong text to reflect if answer is right/wrong.
 //We increment the current question.
 //We display new current question to the user.
+function submitAnswer() {
+    console.log(this.dataset.answer)
+    if (this.dataset.answer == questions[currQuestionIndex].correct){
+        console.log("answer correct")
+    } else {
+        console.log("answer incorrect")
+    }
+}
 
 //=====Step 3
 //Repeat Step 2 until we are out of questions.
