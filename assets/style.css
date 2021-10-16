@@ -53,5 +53,7 @@ footer {
 .btn:active, .btn-2:active {
     transform: scale(0.98);
 }
-
-
+/*Hide stylings for after main button is clicked*/
+.hide {
+    display: none;
+}

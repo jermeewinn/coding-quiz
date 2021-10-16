@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Coding Quiz</title>
-        <link rel="stylesheet" href="./assets/style.css">
-    </head>
-    <body>
-        <header>
-            <h1 class="title">Coding Quiz</h1>
-        </header>
-        <main>
-            <h2>
-                Take this quick quiz to see how proficient you are at JavaScript basics. You will be penalized for every answer you get wrong.
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Coding Quiz</h1>
+    </header>
+    <main>
+        <div id="intro-container">
+            <h2 class="hide">
+                Take this quick quiz to see how proficient you are at JavaScript basics. You will be penalized for every
+                answer you get wrong.
                 <br />
                 <br />
-                Begin the quiz by clicking the start button below!           
+                Begin the quiz by clicking the start button below!
             </h2>
             <button class="btn" id="start-button" type="button">START!</button>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+        </div>
+        <div class="hide" id="question-container">
+            <h2 id="question">Question</h2>
+            <button data-answer="0" id="answer-1">1</button>
+            <button data-answer="1"id="answer-2">2</button>
+            <button data-answer="2"id="answer-3">3</button>
+            <button data-answer="3"id="answer-4">4</button>
+        </div>
+        <div class="hide" id ="submit-score">
+            <input type="text" name="initials" placeholder="Enter Your initials" />
+            <button class="btn" id="submit-score-btn" type="button">Submit Your Score!</button>
+        </div>
+        <div class="hide" id="high-score-container">
             <h3>
                 Click here to view scores.
             </h3>
             <button class="btn-2" id="view-scores" type="button">View Scores</button>
-        </main>
-    </body>
+        </div>
+    </main>
     <footer>
         <h3> Made by Jeremy Huynh, 10/2021</h1>
     </footer>
+    <script src="./assets/script.js"></script>
+</body>
+
 </html>
