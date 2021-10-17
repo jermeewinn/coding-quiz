@@ -56,12 +56,18 @@ var questions = [
         "None of the Above"],
         correct: 1
     }, {
-        question: "Variables declared in a gloabl scope are also applicable in the local scope.",
-        answers: ["True","False"],
+        question: "Variables declared in a local scope are applicable in __________.",
+        answers: ["Local Scope",
+        "Everywhere Else",
+        "Global Scope",
+        "CSS stylesheets"],
         correct: 0
     }, {
-        question: "A function declaration is when we create a function by assiginign it to a variable.",
-        answers: ["True","False"],
+        question: "A function declaration is when we create a function by assignign it to a variable.",
+        answers: ["True",
+        "False",
+        "Unknown",
+        "Known, but don't really care right now."],
         correct: 1
     }
 ]
@@ -121,16 +127,13 @@ function submitAnswer() {
         populateQuestion()
     }
 } 
-
-//answer4El.textContent = currQuestionIndex[]
-
-
 //=====Step 3
 //Repeat Step 2 until we are out of questions.
 //Stop the timer.
 //Display submit-score.
 //User inputs initials and clicks submit.
 //On submit, save user initials and their score to local storage.
+
 
 //=====Step 4
 //User clicks play again. Restarts from step 1.
