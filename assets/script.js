@@ -35,7 +35,7 @@ var questions = [
         "A means of combining plain-text and code into your script.js file to add further functionality to your application."],
         correct: 2
     }, {
-        question: "Data that only hodls one value, such as a string, number, or boolean is called:",
+        question: "Data that only holds one value, such as a string, number, or boolean is called:",
         answers: ["Primitive Data",
         "Civilized Data",
         "Composite Data",
@@ -49,15 +49,18 @@ var questions = [
         "Arrays"],
         correct: 3
     }, {
-        question: "The way a for loop is ordered is: for([initial expression]; [condition]; [increment expression]) {statement}",
-        answers: ["True","False"],
-        correct: 0
+        question: "A type of control flow statement that repeatedly executes a statement while a condition remains true is called a:",
+        answers: ["For Loop",
+        "While Loop",
+        "Loopty Loop",
+        "None of the Above"],
+        correct: 1
     }, {
         question: "Variables declared in a gloabl scope are also applicable in the local scope.",
         answers: ["True","False"],
         correct: 0
     }, {
-        question: "A function declearation isi when we create a function by assiginign it to a variable.",
+        question: "A function declaration is when we create a function by assiginign it to a variable.",
         answers: ["True","False"],
         correct: 1
     }
@@ -75,21 +78,20 @@ var answer3El = document.getElementById("answer-3");
 var answer4El = document.getElementById("answer-4");
 var getIdBtn = document.getElementById("start-button")
 
-
+//=====Step 1
+//Start the game by clicking start on the landing pg.
+//Clicking hides all displays except for question container.
+//It should also start the timer.
 getIdBtn.addEventListener("click", function () {
     introContainerEl.style.display = "none";
     hiScoreContainerEl.style.display = "none";
     questionContainerEl.style.display = "block"
     answer1El.addEventListener("click", submitAnswer);
+    answer2El.addEventListener("click", submitAnswer);
+    answer3El.addEventListener("click", submitAnswer);
+    answer4El.addEventListener("click", submitAnswer);
     populateQuestion()
 })
-//steps from here: set up a class in CSS called hide. In JS, add that class to the main tag.
-//look into setAttribute
-
-//=====Step 1
-//Start the game by clicking start on the landing pg.
-//Clicking hides all displays except for question container.
-//It should also start the timer.
 //It should also populate questions and answers to the page.
 function populateQuestion(){
     //get current question
@@ -110,11 +112,18 @@ function populateQuestion(){
 function submitAnswer() {
     console.log(this.dataset.answer)
     if (this.dataset.answer == questions[currQuestionIndex].correct){
-        console.log("answer correct")
+        console.log("answer correct");
+        currQuestionIndex++;
+        populateQuestion()
     } else {
-        console.log("answer incorrect")
+        console.log("answer incorrect");
+        currQuestionIndex++;
+        populateQuestion()
     }
-}
+} 
+
+//answer4El.textContent = currQuestionIndex[]
+
 
 //=====Step 3
 //Repeat Step 2 until we are out of questions.
