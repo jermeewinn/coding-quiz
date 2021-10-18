@@ -63,7 +63,7 @@ var questions = [
         "CSS stylesheets"],
         correct: 0
     }, {
-        question: "A function declaration is when we create a function by assignign it to a variable.",
+        question: "A function declaration is when we create a function by assigning it to a variable.",
         answers: ["True",
         "False",
         "Unknown",
@@ -83,6 +83,8 @@ var answer2El = document.getElementById("answer-2");
 var answer3El = document.getElementById("answer-3");
 var answer4El = document.getElementById("answer-4");
 var getIdBtn = document.getElementById("start-button")
+var submitScoreEl = document.getElementById("submit-score-container");
+var timeLeft = 10
 
 //=====Step 1
 //Start the game by clicking start on the landing pg.
@@ -98,6 +100,21 @@ getIdBtn.addEventListener("click", function () {
     answer4El.addEventListener("click", submitAnswer);
     populateQuestion()
 })
+
+function countdown() {
+    timeLeft = 60;
+    var timeInterval = setInterval(function() {
+        timeInterval.textContent = timeLeft;
+        if(timeLeft <= 0){
+            timeInterval.textContent = "";
+            clearInterval(timeInterval);
+            currQuestionIndex = questions + 10
+            removeReplace();
+            populateQuestion;
+        }
+        timeLeft--;
+    }, 1000);
+};
 //It should also populate questions and answers to the page.
 function populateQuestion(){
     //get current question
@@ -133,7 +150,18 @@ function submitAnswer() {
 //Display submit-score.
 //User inputs initials and clicks submit.
 //On submit, save user initials and their score to local storage.
+var removeQuiz = function() {
+    if (currQuestionIndex < questions.length){
+        questions++;      
+    } else {
+        document.getElementById("questionContainerEl").remove();
+        var populateSubmitScore = submitScoreEl.style.display = "block";
+        populateSubmitScore()
+    }
+}
+    
 
+    
 
 //=====Step 4
-//User clicks play again. Restarts from step 1.
+//User clicks play again. Restarts from step 1
